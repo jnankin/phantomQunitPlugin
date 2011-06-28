@@ -1,0 +1,50 @@
+# phantomQunitPlugin
+
+## Installation
+
+After installing, make sure to run the phantomQunit:init task.  This will create a phantomqunit directory
+in your tests directory where you can save all of your javascript tests.  It will also write the paths to your project
+root and the directory where your tests are stored in the test runner javascript files.
+
+You must run phantomQunit:init everytime your project root changes or you change the location of your javascript tests.
+In other words, you'll probably have to run it each time you do a Hudson build, etc.
+
+## Dependencies
+
+ * (PhantomJS)[http://http://code.google.com/p/phantomjs/wiki/Installation] - I've had trouble with v1.1.  v1.0 seems to work fine though.
+ * Xvfb - if you plan to run the plugin on a machine without X (i.e. a CI server)
+
+## Configuration
+There's really not much to configure, however you can change the location of your js tests by editing phantomQunit.yml in the plugin's config directory.
+
+
+## Loading JS files in your Qunit tests
+
+There is an object called `phantomQunitUtils` that you can access from your Qunit tests. `phantomQunitUtils` gives you:
+
+ * `ROOT_DIR` - the path to the root directory of your project
+ * `TEST_DIR` - the path to the directory where your javascript tests are stored
+ * `load` - a function which will load javascript files for you on the fly
+
+## Usage
+
+To run all javascript tests:
+
+  ./symfony phantomQunit:run
+
+To run a specific javascript test (e.g. a test suite at test/phantomqunit/moduleName/testA.js)
+
+  ./symfony phantomQunit:run moduleName/testA
+
+To generate a JUnit xml:
+
+  ./symfony phantomQunit:run --xml=log/qunit_tests.xml
+
+
+## Notes for running on Hudson
+
+ * Make sure to run `export DISPLAY=:0` before running your qunit tests on a machine with no X but with xvfb installed.
+   (This should be run on every hudson build.)
+
+ * You may have to make hudson an xuser if it tells you it can't find a display at :0 - `xhost +local:hudson`
+
