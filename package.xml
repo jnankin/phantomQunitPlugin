@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.9.2" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>phantomQunitPlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>Run Javascript Qunit tests from a CI server or the command line!</summary>
+ <description>Allows user to write javascript tests for [Qunit](http://http://docs.jquery.com/Qunit) that can be run from the shell using [phantomjs](http://www.phantomjs.org/) via symfony tasks.
+
+You can also export test results to JUnit syntax just like with sfPhpunitPlugin and the built in lime tasks.  This will let you run continuous integration on your Javascript applications!</description>
+ <lead>
+  <name>Joshua Nankin</name>
+  <user>josh@kishkee.com</user>
+  <email>josh@kishkee.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-05-27</date>
+ <time>17:27:30</time>
+ <version>
+  <release>1.0.1</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="996d3d30ce4be245d4db5b8de3980c4a" name="lib/task/phantomQunitInitTask.class.php" role="data"/>
+   <file md5sum="4f4152b985b075025bd2f3289e806ff3" name="lib/task/phantomQunitRunTask.class.php" role="data"/>
+   <file md5sum="71c361cb2ad5ed6a4964fd386cc18403" name="lib/qunit/phantomQunitUtils.js.tpl" role="data"/>
+   <file md5sum="90d983172e7c747b23b127b17e90d717" name="lib/qunit/qunit.js" role="data"/>
+   <file md5sum="137d4b8b58f69c747fed3415894e73f4" name="lib/qunit/jquery-latest.js" role="data"/>
+   <file md5sum="702da2821bd4d53124d788db080e8a9c" name="lib/qunit/testRunner.htm" role="data"/>
+   <file md5sum="74d903049683e5bbea9ccb7544a42bca" name="lib/qunit/json2.js" role="data"/>
+   <file md5sum="41d8183d89241db4be679d450c02f44c" name="lib/qunit/run-phantomQunit.js.tpl" role="data"/>
+   <file md5sum="723875252438b0156c12bc96625e727e" name="lib/outputWriter/PhantomQunitOutputWriter.class.php" role="data"/>
+   <file md5sum="d7e966352a81af99f2d8a16edc15f1d5" name="lib/outputWriter/PhantomQunitXMLOutputWriter.class.php" role="data"/>
+   <file md5sum="fdafb9ff521ceaeb3639942801170aaf" name="lib/outputWriter/PhantomQunitConsoleOutputWriter.class.php" role="data"/>
+   <file md5sum="5413fa450332db92a5a9fe1cc4eeaa99" name="config/phantomQunit.yml" role="data"/>
+   <file md5sum="70a3d2ba7f01390b6bb47aa78fc4d6ae" name="config/phantomQunitPluginConfiguration.class.php" role="data"/>
+   <file md5sum="eaa5b13a746f51395fc17ab5395d1a15" name="LICENSE" role="data"/>
+   <file md5sum="5442bca3ef90c41edb6077371d263644" name="README" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.4</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog/>
+</package>
