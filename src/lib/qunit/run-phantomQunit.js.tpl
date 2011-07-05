@@ -33,7 +33,7 @@ function jsonifyQunit(){
 
         result.summary['passed'] = $("#qunit-testresult .passed").text();
         result.summary['total'] = $("#qunit-testresult .total").text();
-        result.summary['failed'] = $("#qunit-testresult .failed").text();
+        result.summary['failures'] = $("#qunit-testresult .failed").text();
         result.summary['errors'] = 0;
 
         $("#qunit-tests > li").each(function(idx, li){
